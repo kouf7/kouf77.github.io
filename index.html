@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>To Steki Tou Hlia - Authentic Greek Cuisine</title>
+    <meta name="description" content="Enjoy authentic Greek cuisine at Thiseio in Athens. Traditional recipes, fresh ingredients, and a welcoming atmosphere.">
+    <meta name="author" content="To Steki Tou Hlia">
+    <link rel="canonical" href="https://kouf7.github.io/STEKITOUHLIA/">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Preconnect to Google Fonts for faster font loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Preload hero image to improve LCP (replace with optimized image later) -->
+    <link rel="preload" as="image" href="images/IMG_3590%20edit.webp">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&family=Nunito:wght@300;400;700&family=Cormorant+Garamond:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            -webkit-tap-highlight-color: transparent;
+        }
+        /* Responsive tweaks for mobile */
+        @media (max-width: 640px) {
+            .min-h-screen { min-height: 100vh; }
+            .px-6 { padding-left: 1rem; padding-right: 1rem; }
+            .md\:px-12, .lg\:px-16 { padding-left: 1rem !important; padding-right: 1rem !important; }
+            .py-6, .py-8, .py-16, .md\:py-24, .lg\:py-16 { padding-top: 1.5rem !important; padding-bottom: 1.5rem !important; }
+            .h-96, .h-48 { height: 200px !important; }
+            .rounded-lg { border-radius: 0.75rem; }
+            .max-w-6xl, .max-w-7xl, .max-w-3xl, .max-w-2xl { max-width: 100vw !important; }
+            .text-4xl, .md\:text-4xl, .lg\:text-4xl { font-size: 2rem !important; }
+            .text-3xl, .md\:text-3xl, .lg\:text-3xl { font-size: 1.5rem !important; }
+            .text-xl, .md\:text-xl, .lg\:text-xl { font-size: 1.1rem !important; }
+            .text-lg, .md\:text-lg, .lg\:text-lg { font-size: 1rem !important; }
+            .space-y-12 > * + * { margin-top: 1.5rem !important; }
+            .space-x-6 > * + * { margin-left: 1rem !important; }
+            .space-x-4 > * + * { margin-left: 0.5rem !important; }
+            .faq { font-size: 0.95rem; }
+        }
+        /* Make iframe responsive */
+        .responsive-iframe {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%;
+        }
+        .responsive-iframe iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        /* Add this to your <style> section for easy adjustment */
+        .menu-item-spacing {
+          margin-bottom: 5rem; /* Adjust this value for more/less space */
+        }
+        .menu-title-align {
+          display: flex;
+          align-items: baseline;
+          width: 100%;
+        }
+        .menu-title-align h2 {
+          flex: 1;
+        }
+        .menu-title-align span {
+          margin-left: 1rem;
+          white-space: nowrap;
+        }
+        /* Mobile style for About section title */
+        @media (max-width: 767px) {
+          .about-title {
+            font-size: 1.75rem !important;
+            font-weight: 800 !important;
+            margin-top: 2.5rem !important;
+          }
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'serif'],
+                        'sans': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <script>
+    // Smooth scroll for anchor links
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+            anchor.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    // Close mobile submenu if open
+                    var submenu = document.getElementById('mobile-submenu');
+                    if (submenu && window.getComputedStyle(submenu).display !== 'none') {
+                        submenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+        // Mobile menu button interaction
+        var menuBtn = document.getElementById('mobile-menu-btn');
+        var submenu = document.getElementById('mobile-submenu');
+        var closeBtn = document.getElementById('close-submenu');
+        menuBtn && menuBtn.addEventListener('click', function() {
+            submenu.classList.remove('hidden');
+        });
+        closeBtn && closeBtn.addEventListener('click', function() {
+            submenu.classList.add('hidden');
+        });
+        // Close submenu when clicking outside
+        submenu && submenu.addEventListener('click', function(e) {
+            if (e.target === submenu) {
+                submenu.classList.add('hidden');
+            }
+        });
+    });
+    </script>
+</head>
+<body class="font-sans">
+    <!-- Hero Section with Header -->
+    <div class="relative min-h-screen bg-cover bg-center bg-no-repeat">
+        <img src="images/IMG_3590%20edit.webp" alt="Charcoal-grilled lamb chops over wooden table, restaurant hero image" class="absolute inset-0 w-full h-full object-cover z-0" style="object-position: center;" loading="eager" decoding="async" width="1920" height="1080" fetchpriority="high">
+        <div class="absolute inset-0 bg-black bg-opacity-40 z-10"></div>
+        
+        <!-- Header -->
+        <header class="relative z-20 flex items-center justify-between px-6 md:px-12 lg:px-16 py-6">
+            <!-- Restaurant Name -->
+            <div class="text-white">
+                <h1 class="font-serif text-2xl md:text-3xl lg:text-4xl font-bold tracking-wide">
+                    To Steki Tou Hlia
+                </h1>
+                <p class="text-sm md:text-base font-light tracking-widest mt-1 opacity-90">
+                    THISEIO,ATHENS
+                </p>
+            </div>
+            <!-- Navigation -->
+            <nav class="hidden md:flex space-x-8 lg:space-x-12">
+                <a href="#menu" class="text-white font-medium text-sm lg:text-base tracking-wider hover:text-blue-200 transition-colors duration-300">
+                    MENU
+                </a>
+                <a href="#contact" class="text-white font-medium text-sm lg:text-base tracking-wider hover:text-blue-200 transition-colors duration-300">
+                    CONTACT
+                </a>
+            </nav>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-white" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-submenu" title="Open menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </header>
+        <!-- Mobile Submenu -->
+        <div id="mobile-submenu" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-60 z-50 flex items-start justify-end md:hidden hidden" role="dialog" aria-modal="true" aria-hidden="true">
+            <div class="bg-white w-2/3 max-w-xs h-full shadow-lg flex flex-col pt-24 space-y-8 text-center">
+                <a href="#menu" class="block text-lg font-bold text-gray-900 py-3 px-6 border-b border-gray-200 hover:bg-gray-100 transition">MENU</a>
+                <a href="#contact" class="block text-lg font-bold text-gray-900 py-3 px-6 border-b border-gray-200 hover:bg-gray-100 transition">CONTACT</a>
+                <button id="close-submenu" class="mt-auto mb-8 mx-auto px-6 py-2 bg-gray-900 text-white rounded-full">Close</button>
+            </div>
+        </div>
+        
+        <!-- Hero Content -->
+        <div class="relative z-20 flex flex-col justify-center items-start px-6 md:px-12 lg:px-16 h-full min-h-[calc(100vh-120px)]">
+            <div class="max-w-2xl">
+                <h2 class="text-white font-serif text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                    AUTHENTIC GREEK FLAVORS IN THE HEART OF ATHENS.
+                </h2>
+            </div>
+            
+            <!-- Contact Info -->
+            <div class="absolute bottom-8 right-6 md:right-12 lg:right-16 text-white text-right">
+                <p class="font-medium text-sm tracking-wider mb-1">RESERVATIONS</p>
+                <p class="text-lg md:text-xl font-light">+30 210 342 2407</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- About Section -->
+    <section class="py-16 md:py-24 px-6 md:px-12 lg:px-16 bg-white" id="about">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div id="about-text" class="opacity-0" style="transform: translateY(100px);">
+                    <h3 class="font-serif text-3xl md:text-4xl font-bold text-gray-900 mb-6 about-title">
+                       This Is What Greece Tastes Like
+                    </h3>
+                    <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                     Right under the Acropolis, in the heart of Thissio, our family has been grilling lamb chops and local meats the same way for over 40 years — over real charcoal, with care, simplicity, and flavor that speaks for itself   
+                    </p>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                     Ask the locals where to eat — theyll probably send you here. Charcoal-grilled meat, homemade starters, and the kind of place that still cooks with care.
+                    </p>
+                </div>
+                <div id="about-img-container" class="relative h-96 bg-cover bg-center rounded-lg overflow-hidden">
+                    <img src="images\IMG_3603 edit.webp" alt="Family grilling lamb chops over charcoal at To Steki Tou Hlia, Athens" class="w-full h-full object-cover" loading="lazy" width="600" height="400">
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    gsap.registerPlugin(ScrollTrigger);
+    var isMobile = window.matchMedia('(max-width: 767px)').matches;
+    if (isMobile) {
+        // On mobile: text slides up from below, then image slides in from the left
+        gsap.set('#about-text', { y: 100, opacity: 0 });
+        gsap.set('#about-img-container', { x: -400 });
+        gsap.to('#about-text', {
+            opacity: 1,
+            y: 0,
+            duration: 1.2,
+            ease: 'power2.out',
+            scrollTrigger: {
+                trigger: '#about-img-container',
+                start: 'top 100%',
+                toggleActions: 'play none none none'
+            },
+            onComplete: function() {
+                gsap.to('#about-img-container', {
+                    x: 0,
+                    duration: 1.2,
+                    ease: 'power2.out'
+                });
+            }
+        });
+    } else {
+        // On desktop: image slides in from the left, then text slides up from below
+        gsap.set('#about-img-container', { x: -1900 });
+        gsap.set('#about-text', { y: 100, opacity: 0 });
+        gsap.to('#about-img-container', {
+            x: 0,
+            duration: 1.3,
+            ease: 'power2.out',
+            scrollTrigger: {
+                trigger: '#about-img-container',
+                start: 'top 90%',
+                toggleActions: 'play none none none'
+            },
+            onComplete: function() {
+                gsap.to('#about-text', {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1.4,
+                    ease: 'power2.out'
+                });
+            }
+        });
+    }
+});
+    </script>
+    
+    <!-- Menu Section with Full Background Image -->
+    <section id="menu" class="relative py-20 md:py-24 px-6 md:px-12 lg:px-16 overflow-hidden">
+        <div class="absolute inset-0 w-full h-full z-0" style="background-image: url('images/FONTO MENU (2).webp'); background-size: cover; background-position: center; background-repeat: no-repeat; filter: brightness(0.55);"></div>
+        <style>
+        /* Control "Our Specialty's" heading font separately */
+        .specialty-heading {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            color: #F3EDE2;
+        }
+        @media (max-width: 767px) {
+            #menu {
+                padding-top: 4.5rem !important;
+            }
+            .specialty-heading {
+                font-size: 3rem !important;
+                font-weight: 900 !important;
+                letter-spacing: 0.04em !important;
+            }
+        }
+        </style>
+        <div class="relative z-10">
+            <style>
+                .menu-heading { position: relative; z-index: 2; margin-top: 0; margin-bottom: 1.5rem; text-align: center; }
+                .menu-heading-line { width: 9rem; height: 3px; background:#f3ede0; opacity: 0.8; border-radius: 2px; margin: 0.5rem auto 3rem auto; }
+                .menu-item-spacing { margin-bottom: 3rem; }
+                .menu-title-align { display: flex; align-items: baseline; width: 100%; justify-content: space-between; }
+                .menu-title-align h2 {
+                    color: #F3EDE2; /* title color matching request */
+                    font-family: 'Libre Baskerville', serif; /* correct font */
+                    font-size: var(--menu-item-title-size, 1.4rem); /* slightly larger by default */
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    margin: 0;
+                    flex: 1;
+                    letter-spacing: 0.02em;
+                }
+                .menu-title-align .price {
+                    color: #F3EDE2; /* match title color - preserved */
+                    font-family: 'Libre Baskerville', serif; /* preserved */
+                    font-weight: 700;
+                    font-size: 1.12rem; /* slightly larger to read taller */
+                    line-height: 1.28; /* taller line-height for visual height */
+                    padding: 0.08rem 0; /* tiny vertical padding to increase perceived height */
+                    margin-left: 1rem;
+                    text-align: right;
+                    min-width: 3rem;
+                    display: inline-flex;
+                    align-items: center;
+                    vertical-align: middle;
+                }
+                /* make descriptions slightly larger and thicker for better readability */
+                .menu-description { color: #2B2B2B; font-size: 1.1rem; font-weight: 800; line-height: 1.6; margin-top: 0.5rem; font-family: 'Nunito', sans-serif; }
+                @media (max-width: 767px) {
+                    .menu-heading { font-size: 4rem !important; margin-bottom: 2.20rem !important; }
+                    .menu-heading-line { margin-bottom: 1.5rem !important; }
+                    /* On mobile make titles slightly taller and align with prices */
+                    .menu-title-align { align-items: center; }
+                    .menu-title-align h2 {
+                        font-size: var(--menu-item-title-size-mobile, 1.22rem) !important; /* slightly larger on mobile */
+                        line-height: 1.02 !important;
+                        margin-right: 0.5rem;
+                    }
+                    /* Make prices read taller on phones */
+                    .menu-title-align .price { display: inline-flex; align-items: center; font-size: 1.12rem; line-height: 1.26; padding: 0.08rem 0; }
+                    /* slightly increase size on small screens too and keep heavier weight */
+                    .menu-description { font-size: 1.18rem !important; font-weight: 800 !important; }
+                }
+            </style>
+            <div class="flex flex-col items-center w-full menu-heading">
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-white tracking-wide">Our Specialties</h2>
+                <div class="menu-heading-line"></div>
+            </div>
+            <div class="max-w-7xl mx-auto mt-2">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+                    <!-- Menu Items: 2 rows x 3 columns on md+ -->
+                    <article class="flex flex-col items-start menu-item-spacing" itemscope itemtype="https://schema.org/MenuItem">
+  <div class="menu-title-align mb-2">
+    <h2 itemprop="name">LAMP CHOPS</h2>
+    <span itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+      <span class="price" itemprop="price" content="14">€14</span>
+      <meta itemprop="priceCurrency" content="EUR" />
+    </span>
+  </div>
+  <p class="menu-description" itemprop="description">
+    Our signature dish. Tender milk-fed lamb chops, grilled to perfection with just salt and oregano, served with lemon and crispy hand-cut fries.
+  </p>
+</article>
+                    <article class="flex flex-col items-start menu-item-spacing" itemscope itemtype="https://schema.org/MenuItem">
+  <div class="menu-title-align mb-2">
+    <h2 itemprop="name">GREEK SALAD</h2>
+    <span itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+      <span class="price" itemprop="price" content="8">€8</span>
+      <meta itemprop="priceCurrency" content="EUR" />
+    </span>
+  </div>
+  <p class="menu-description" itemprop="description">
+    Traditional Horiatiki salad with ripe tomatoes, crisp cucumbers, fresh peppers, Kalamata olives, creamy feta cheese, sliced onions, finished with extra virgin olive oil and fragrant oregano.
+  </p>
+</article>
+                    <article class="flex flex-col items-start menu-item-spacing" itemscope itemtype="https://schema.org/MenuItem">
+  <div class="menu-title-align mb-2">
+    <h2 itemprop="name">STEAKY PORK</h2>
+    <span itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+      <span class="price" itemprop="price" content="10">€10</span>
+      <meta itemprop="priceCurrency" content="EUR" />
+    </span>
+  </div>
+  <p class="menu-description" itemprop="description">
+    Grilled pork belly with crispy skin and a smoky finish, served with lemon and seasonal sides.
+  </p>
+</article>
+                    <article class="flex flex-col items-start menu-item-spacing" itemscope itemtype="https://schema.org/MenuItem">
+  <div class="menu-title-align mb-2">
+    <h2 itemprop="name">SAGANAKI</h2>
+    <span itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+      <span class="price" itemprop="price" content="4">€4</span>
+      <meta itemprop="priceCurrency" content="EUR" />
+    </span>
+  </div>
+  <p class="menu-description" itemprop="description">
+    Saganaki golden-fried Kefalotyri cheese, served hot and crispy with a wedge of fresh lemon.
+  </p>
+</article>
+                    <article class="flex flex-col items-start menu-item-spacing" itemscope itemtype="https://schema.org/MenuItem">
+  <div class="menu-title-align mb-2">
+    <h2 itemprop="name">SAUSAGES</h2>
+    <span itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+      <span class="price" itemprop="price" content="8">€8</span>
+      <meta itemprop="priceCurrency" content="EUR" />
+    </span>
+  </div>
+  <p class="menu-description" itemprop="description">
+    Our Sausage comes in three flavors: pork with creamy Cretan graviera, a beef & pork blend with herbs, and mildly spicy mutton with a bold character.
+  </p>
+</article>
+                    <article class="flex flex-col items-start menu-item-spacing" itemscope itemtype="https://schema.org/MenuItem">
+  <div class="menu-title-align mb-2">
+    <h2 itemprop="name">TZATZIKI</h2>
+    <span itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+      <span class="price" itemprop="price" content="4">€4</span>
+      <meta itemprop="priceCurrency" content="EUR" />
+    </span>
+  </div>
+  <p class="menu-description" itemprop="description">
+    Creamy tzatziki, a traditional Greek dip made from creamy yogurt, cucumber, garlic, extra virgin olive oil, and fresh dill.
+  </p>
+</article>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 md:py-24 px-6 md:px-12 lg:px-16 bg-white" style="margin-top:0;">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="font-serif text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                        Visit Us Today
+                    </h3>
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-2">Address</h4>
+                            <p class="text-gray-600">
+                             Thessalonikhs 7<br>
+                               118 51 Thiseio, Athens
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-2">Hours</h4>
+                            <p class="text-gray-600">
+                                Monday - Friday: 5:00 PM - 1:00 AM<br>
+                                Saturday - Sunday: 1:00 PM - 1:00 AM<br>
+                                Kitchen closes at 12:00 PM
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-2">Contact</h4>
+                            <p class="text-gray-600">
+                                Phone: +30 210 342 2407<br>
+                                Email: tostekitouilia@gmail.com
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative h-96 bg-cover bg-center rounded-lg overflow-hidden responsive-iframe" id="map-container" data-map-url="https://www.google.com/maps?q=Thessalonikhs+7,+Thiseio,+Athens,+Greece&output=embed">
+                    <noscript>
+                        <a href="https://www.google.com/maps?q=Thessalonikhs+7,+Thiseio,+Athens,+Greece" target="_blank" rel="noopener noreferrer">Open map in new tab (JavaScript disabled)</a>
+                    </noscript>
+                    <div class="w-full h-full bg-gray-200 flex items-center justify-center text-center p-4">
+                        <div>
+                            <p class="text-gray-800 mb-4">This interactive map is provided by Google Maps and may set cookies on your device. Click to load the map if you accept this.</p>
+                            <button id="load-map-btn" class="px-4 py-2 bg-gray-900 text-white rounded">Load map</button>
+                            <p class="text-sm text-gray-600 mt-2"><a href="https://www.google.com/maps?q=Thessalonikhs+7,+Thiseio,+Athens" target="_blank" rel="noopener noreferrer" class="underline">Open map in Google Maps</a></p>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    (function() {
+                        var container = document.getElementById('map-container');
+                        if (!container) return;
+                        var mapUrl = container.dataset.mapUrl;
+                        var loadBtn = document.getElementById('load-map-btn');
+
+                        function injectMap() {
+                            if (sessionStorage.getItem('mapLoaded')) {
+                                // If previously loaded this session, inject immediately
+                                createIframe();
+                                return;
+                            }
+                            if (!loadBtn) return;
+                            loadBtn.addEventListener('click', function() {
+                                createIframe();
+                                try { sessionStorage.setItem('mapLoaded', '1'); } catch (e) { /* ignore */ }
+                            }, { once: true });
+                        }
+
+                        function createIframe() {
+                            // Remove placeholder children
+                            while (container.firstChild) container.removeChild(container.firstChild);
+                            var iframe = document.createElement('iframe');
+                            iframe.setAttribute('src', mapUrl);
+                            iframe.setAttribute('allowfullscreen', '');
+                            iframe.setAttribute('loading', 'lazy');
+                            iframe.setAttribute('referrerpolicy', 'no-referrer-when-downgrade');
+                            iframe.setAttribute('title', 'Google Maps - Thessalonikhs 7, Thiseio Athens');
+                            iframe.style.width = '100%';
+                            iframe.style.height = '100%';
+                            iframe.style.border = '0';
+                            container.appendChild(iframe);
+                        }
+
+                        // Initialize: if session indicates previously loaded, inject immediately
+                        if (sessionStorage.getItem('mapLoaded')) {
+                            createIframe();
+                        } else {
+                            injectMap();
+                        }
+                    })();
+                </script>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8 px-6 md:px-12 lg:px-16">
+        <div class="max-w-6xl mx-auto text-center">
+            <h4 class="font-serif text-2xl font-bold mb-4">TO STEKI TOU HLIA</h4>
+            <p class="text-gray-400 mb-4">Authentic Greek cuisine since 1952</p>
+            <div class="flex justify-center space-x-6 mb-8">
+                <!-- Only TripAdvisor kept. Set data-href to your TripAdvisor URL and the script will apply it -->
+                <a id="tripadvisor-link" href="#" data-href="https://www.tripadvisor.com/" class="text-gray-400 hover:text-white transition-colors" aria-label="TripAdvisor" target="_blank" rel="noopener noreferrer">TripAdvisor</a>
+            </div>
+            <div class="max-w-3xl mx-auto text-left bg-gray-800 rounded-lg p-6 mb-8">
+                <h5 class="font-serif text-xl font-bold mb-4">Frequently Asked Questions</h5>
+                <ul class="space-y-4">
+                    <li>
+                        <strong>Can you bring one more portion?</strong>
+                        <p class="text-gray-300">One more portion of lamp,for the gentleman please.</p>
+                    </li>
+                    <li>
+                        <strong>Can I make a reservation online?</strong>
+                        <p class="text-gray-300">Absolutely! Use the 'Reserve a Table' button above or call us directly.</p>
+                    </li>
+                    <li>
+                        <strong>Is there parking available?</strong>
+                        <p class="text-gray-300">Street parking is available nearby. We recommend arriving early during busy hours.</p>
+                    </li>
+                    <li>
+                        <strong>Do you host private events?</strong>
+                        <p class="text-gray-300">Yes, we offer private dining and event hosting. Contact us for details.</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="text-gray-400 text-sm mb-2">&copy; 2025 To Steki Tou Hlia. All rights reserved.</div>
+            <nav class="flex justify-center space-x-4 text-gray-400 text-sm">
+                <a href="#menu" class="hover:text-white transition-colors">Menu</a>
+                <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+                <a href="privacy.html" class="hover:text-white transition-colors" aria-label="Privacy Policy">Privacy Policy</a>
+                <a href="terms.html" class="hover:text-white transition-colors" aria-label="Terms of Service">Terms of Service</a>
+            </nav>
+            <script>
+                // Apply data-href to TripAdvisor link so you can edit the data-href value without touching the markup
+                document.addEventListener('DOMContentLoaded', function() {
+                    var ta = document.getElementById('tripadvisor-link');
+                    if (ta && ta.dataset && ta.dataset.href) {
+                        ta.setAttribute('href', ta.dataset.href);
+                    }
+                });
+            </script>
+        </div>
+    </footer>
+    <script>
+    // Mobile menu button interaction with accessibility improvements
+    var menuBtn = document.getElementById('mobile-menu-btn');
+    var submenu = document.getElementById('mobile-submenu');
+    var closeBtn = document.getElementById('close-submenu');
+
+    function openSubmenu() {
+        if (!submenu) return;
+        submenu.classList.remove('hidden');
+        submenu.setAttribute('aria-hidden', 'false');
+        if (menuBtn) menuBtn.setAttribute('aria-expanded', 'true');
+        // move focus into submenu for keyboard users
+        // prefer focusing the close button if available
+        if (closeBtn) closeBtn.focus();
+    }
+
+    function closeSubmenu() {
+        if (!submenu) return;
+        submenu.classList.add('hidden');
+        submenu.setAttribute('aria-hidden', 'true');
+        if (menuBtn) menuBtn.setAttribute('aria-expanded', 'false');
+        // return focus to the menu button
+        if (menuBtn) menuBtn.focus();
+    }
+
+    menuBtn && menuBtn.addEventListener('click', function() {
+        openSubmenu();
+    });
+    closeBtn && closeBtn.addEventListener('click', function() {
+        closeSubmenu();
+    });
+    // Close submenu when clicking outside (overlay)
+    submenu && submenu.addEventListener('click', function(e) {
+        if (e.target === submenu) {
+            closeSubmenu();
+        }
+    });
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && submenu && !submenu.classList.contains('hidden')) {
+            closeSubmenu();
+        }
+    });
+    </script>
+</body>
+</html>
